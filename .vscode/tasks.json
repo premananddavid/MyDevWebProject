@@ -1,0 +1,90 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "DevWeb Single Run",
+      "type": "process",
+      "presentation": {
+        "panel": "new"
+      },
+      "windows": {
+        "command": "${env:DEVWEB_PATH}\\DevWeb.exe"
+      },
+      "osx": {
+        "command": "${env:DEVWEB_PATH}/DevWeb"
+      },
+      "linux": {
+        "command": "${env:DEVWEB_PATH}/DevWeb"
+      },
+      "args": [
+        "-ide=vscode",
+        "${cwd}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "DevWeb Load Run",
+      "type": "process",
+      "presentation": {
+        "panel": "new"
+      },
+      "windows": {
+        "command": "${env:DEVWEB_PATH}\\DevWeb.exe"
+      },
+      "osx": {
+        "command": "${env:DEVWEB_PATH}/DevWeb"
+      },
+      "linux": {
+        "command": "${env:DEVWEB_PATH}/DevWeb"
+      },
+      "args": [
+        "-mode=load",
+        "-ide=vscode",
+        "${workspaceRoot}"
+      ]
+    },
+    {
+      "label": "DevWeb Debug Run",
+      "type": "process",
+      "windows": {
+        "command": "${env:DEVWEB_PATH}\\DevWeb.exe"
+      },
+      "osx": {
+        "command": "${env:DEVWEB_PATH}/DevWeb"
+      },
+      "linux": {
+        "command": "${env:DEVWEB_PATH}/DevWeb"
+      },
+      "isBackground": true,
+      "presentation": {
+        "panel": "new"
+      },
+      "args": [
+        "-inspect",
+        "-ide=vscode",
+        "${workspaceRoot}"
+      ],
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "."
+          }
+        }
+      ]
+    }
+  ]
+}

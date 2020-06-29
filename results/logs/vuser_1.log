@@ -1,0 +1,127 @@
+[20:14:24.95] Info: Starting initialize.
+[20:14:24.95] Info: Ending initialize.
+[20:14:24.96] Info: Starting iteration 1.
+[20:14:24.96] Info: Hello DevWeb	(./main.js:4:10)
+[20:14:24.97] Info: Parameter Substitution: 'username = ashish'	(./main.js:6:29)
+[20:14:24.97] Info: ashish	(./main.js:6:10)
+[20:14:24.97] Info: Parameter Substitution: 'jobtitle = tester'	(./main.js:7:29)
+[20:14:24.97] Info: tester	(./main.js:7:10)
+[20:14:24.97] Info: Transaction 'S01_DevWeb_VSCode_GET_T00' started.	(./main.js:10:9)
+[20:14:24.98] Info: WebRequest [Id: ] 'https://reqres.in/api/users/2' registered to send (sync).
+[20:14:24.98] Trace: Request 'https://reqres.in/api/users/2': 
+GET /api/users/2 HTTP/1.1
+Host: reqres.in
+User-Agent: Go-http-client/1.1
+Content-Type: application/json
+Accept-Encoding: gzip
+
+
+[20:14:24.98] Debug: Request: GET 'https://reqres.in/api/users/2' started.
+[20:14:25.63] Trace: TLS session version: 1.2 cipher: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+[20:14:25.63] Trace: Connected socket from [2409:4043:50a:f303:99af:ee24:3e27:a8cd]:51383 to [2606:4700:8d7f:d700:6ba6:e560:7d5e:89c1]:443 in 94 ms.
+[20:14:25.73] Debug: Request: GET 'https://reqres.in/api/users/2' done. Status 200 OK. HTTP/2.0
+[20:14:25.73] Trace: Response 'https://reqres.in/api/users/2': 
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Age: 588
+Cache-Control: max-age=14400
+Cf-Cache-Status: HIT
+Cf-Ray: 5a97b4c62fe1de39-BOM
+Cf-Request-Id: 0392af4fd80000de395e99d200000001
+Content-Type: application/json; charset=utf-8
+Date: Fri, 26 Jun 2020 14:44:24 GMT
+Etag: W/"173-1Z8bn0V7UjH6FK7NCaza1ccWXQk"
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+Set-Cookie: __cfduid=dc5503573abf62af0b5877374247105031593182664; expires=Sun, 26-Jul-20 14:44:24 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure
+Vary: Accept-Encoding
+Via: 1.1 vegur
+X-Powered-By: Express
+
+
+[20:14:25.73] Info: WebRequest [Id: ] 'https://reqres.in/api/users/2' completed. (1 request(s) sent, 1034 bytes downloaded)
+[20:14:25.73] Trace: 'https://reqres.in/api/users/2' response body: {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},"ad":{"company":"StatusCode Weekly","url":"http://statuscode.org/","text":"A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."}}
+[20:14:25.73] Info: Saving parameter 'name = [Janet Weaver]'
+[20:14:25.73] Info: Saving parameter 'first_name = Janet'
+[20:14:25.73] Info: Saving parameter 'isSuccess1 = true'
+[20:14:25.73] Info: Saving parameter 'text = A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.'
+[20:14:33.90] Info: Transaction 'S01_DevWeb_VSCode_GET_T00' ended with a 'Passed' status (Duration: 8932 ms., ThinkTime: 0 ms.).	(./main.js:32:13)
+[20:14:36.75] Info: {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},"ad":{"company":"StatusCode Weekly","url":"http://statuscode.org/","text":"A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."}}	(./main.js:38:10)
+[20:14:36.75] Info: Janet	(./main.js:40:10)
+[20:14:36.75] Info: Weaver	(./main.js:42:10)
+[20:14:36.76] Info: Sleeping 3 sec.	(./main.js:45:10)
+[20:14:39.76] Info: Transaction 'S01_DevWeb_VSCode_POST_T05_Janet' started.	(./main.js:49:9)
+[20:14:39.76] Info: WebRequest [Id: ] 'https://reqres.in/api/users' registered to send (sync).
+[20:14:39.76] Trace: Request 'https://reqres.in/api/users': 
+POST /api/users HTTP/1.1
+Host: reqres.in
+User-Agent: Go-http-client/1.1
+Content-Length: 21
+Content-Type: text/html; charset=utf-8
+Cookie: __cfduid=dc5503573abf62af0b5877374247105031593182664
+Accept-Encoding: gzip
+
+name=Janet&job=Tester
+[20:14:39.76] Debug: Request: POST 'https://reqres.in/api/users' started.
+[20:14:40.23] Debug: Request: POST 'https://reqres.in/api/users' done. Status 201 Created. HTTP/2.0
+[20:14:40.23] Trace: Response 'https://reqres.in/api/users': 
+HTTP/2.0 201 Created
+Content-Length: 51
+Access-Control-Allow-Origin: *
+Cf-Cache-Status: DYNAMIC
+Cf-Ray: 5a97b51e8894de39-BOM
+Cf-Request-Id: 0392af87190000de395ea46200000001
+Content-Type: application/json; charset=utf-8
+Date: Fri, 26 Jun 2020 14:44:39 GMT
+Etag: W/"33-efiuEMzDH7+iB5E+nN/S21I4L/Q"
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+Via: 1.1 vegur
+X-Powered-By: Express
+
+
+[20:14:40.23] Info: WebRequest [Id: ] 'https://reqres.in/api/users' completed. (1 request(s) sent, 517 bytes downloaded)
+[20:14:40.23] Trace: 'https://reqres.in/api/users' response body: {"id":"484","createdAt":"2020-06-26T14:44:39.115Z"}
+[20:14:40.24] Info: Transaction 'S01_DevWeb_VSCode_POST_T05_Janet' ended with a 'Passed' status (Duration: 479 ms., ThinkTime: 0 ms.).	(./main.js:69:13)
+[20:14:40.24] Info: {"id":"484","createdAt":"2020-06-26T14:44:39.115Z"}	(./main.js:74:10)
+[20:14:40.24] Info: Sleeping 3 sec.	(./main.js:75:10)
+[20:14:43.24] Info: Transaction 'S01_DevWeb_VSCode_PUT_T10' started.	(./main.js:77:9)
+[20:14:43.24] Info: WebRequest [Id: ] 'https://reqres.in/api/users/2' registered to send (sync).
+[20:14:43.24] Trace: Request 'https://reqres.in/api/users/2': 
+PUT /api/users/2 HTTP/1.1
+Host: reqres.in
+User-Agent: Go-http-client/1.1
+Content-Length: 41
+Content-Type: text/html; charset=utf-8
+Cookie: __cfduid=dc5503573abf62af0b5877374247105031593182664
+Accept-Encoding: gzip
+
+name=Ashish+Ashawan&job=Software+Test+Eng
+[20:14:43.24] Debug: Request: PUT 'https://reqres.in/api/users/2' started.
+[20:14:43.58] Debug: Request: PUT 'https://reqres.in/api/users/2' done. Status 200 OK. HTTP/2.0
+[20:14:43.58] Trace: Response 'https://reqres.in/api/users/2': 
+HTTP/2.0 200 OK
+Content-Length: 40
+Access-Control-Allow-Origin: *
+Cf-Cache-Status: DYNAMIC
+Cf-Ray: 5a97b53429c5de39-BOM
+Cf-Request-Id: 0392af94980000de395eb69200000001
+Content-Type: application/json; charset=utf-8
+Date: Fri, 26 Jun 2020 14:44:42 GMT
+Etag: W/"28-sKT2hi5MEwM4Q922bPHm+1lyfsM"
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+Vary: Accept-Encoding
+Via: 1.1 vegur
+X-Powered-By: Express
+
+
+[20:14:43.58] Info: WebRequest [Id: ] 'https://reqres.in/api/users/2' completed. (1 request(s) sent, 524 bytes downloaded)
+[20:14:43.58] Trace: 'https://reqres.in/api/users/2' response body: {"updatedAt":"2020-06-26T14:44:42.455Z"}
+[20:14:43.58] Info: Saving parameter 'status = updated'
+[20:14:43.58] Info: Transaction 'S01_DevWeb_VSCode_PUT_T10' ended with a 'Passed' status (Duration: 343 ms., ThinkTime: 0 ms.).	(./main.js:94:9)
+[20:14:43.58] Info: {"updatedAt":"2020-06-26T14:44:42.455Z"}	(./main.js:95:10)
+[20:14:43.58] Info: Status: updated	(./main.js:97:10)
+[20:14:43.60] Info: Ending iteration 1.
+[20:14:43.60] Info: Starting finalize.
+[20:14:43.62] Info: Ending finalize.

@@ -1,0 +1,6 @@
+# All times are defined in seconds
+vusers: 10
+pacing: 60
+rampUp: 5
+duration: 600
+tearDown: 5

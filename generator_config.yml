@@ -1,0 +1,48 @@
+logger:                                                                       #Configuration for the system wide logger
+  filename: ./logs/devWebGen.log                                              #The location and name of the log file.
+  logLevel: info                                                              #The log level of the system log. Possible values are trace, debug, info, warning, error
+  maxSize: 100                                                                #The maximum size in Mb of a single log file (for rotating log).
+  maxBackups: 5                                                               #The maximum number of log files to create (for rotating log).
+  maxAge: 30                                                                  #The maximum number of days to save a rotated log file.
+  showInConsole: true                                                         #If true, everything sent to the log is printed to the console (this may slow down execution).
+  stackTraceOnError: false                                                    #If true, error messages will contain a full stack trace from where the error occurred.
+  maxLineLength: 200                                                          #The maximum number of characters to show in a single line of the console (will be truncated after that) or 0 if no truncation is needed.
+
+analytics:                                                                    #Configuration for the usage analytics component
+  enable: false                                                               #If true, the usage analytics component is enabled during the run.
+  apiServer: #18.207.39.148                                                   #The host name of the usage analytics web server.
+  schemaID: devweb_1.0                                                        #The schema that will receive the reports.
+
+filter:                                                                       #Filter WebRequest content
+  headers: ['Host', 'Content-Length', 'Cookie']                               #The headers that will be filtered out of the web requests, for example: ['Host', 'Content-Length', 'Cookie'].
+  includeHosts: []                                                            #Only requests from listed hosts will be generated in the script. Use regular expressions, for example, *.microfocus.com allows all sites in microfocus.com domain.
+  excludeHosts: ['.*google.*', '.*bing.*', '.*geolocation.*', '.*gstatic.*']  #Requests from these hosts will be excluded from the script. Use regular expressions, for example, *.microfocus.com excludes all sites in microfocus.com domain.
+  excludeMethods: ['CONNECT']                                                 #Exclude all requests with the methods in this list, for example: ['CONNECT'].
+  excludeResponseStatusCodes: [404]                                           #Exclude all requests where the response is a status code in this list, for example: [404].
+  extensions: ['.ico']                                                        #Exclude URLs that have these extensions, for example: ['.gif'].
+  noneResources: ['text/html', 'text/xml', 'text/plain', 'application/json']  #When "Pages" level is selected for script generation, these content types are treated as a new WebRequest step.
+  excludeWebSocket: false                                                     #If true, all the WebSocket traffic will be filtered from the generated script.
+
+correlation:
+  recordScanEnabled: false                                                    #If true, automatic correlation record scan will be performed during code generation
+  rulesScanEnabled: false                                                     #If true, correlation rules scan is performed during code generation.
+  rulesDirectory: ./CorrelationRules                                          #The path that contains the correlation rule files.
+  recordScanConfigDirectory: ./resources/CorrelationEngine/                   #The path that contains the correlation engine resources and configuration.
+  scanTimeout: 300                                                            #The timeout for correlation scan, in seconds.
+  maxCommentLength: 100                                                       #The maximum length for the extracted value displayed in the script, set to -1 for unlimited.
+  extractorType: boundary                                                     #The extractor type that will be used for correlation candidates: boundary or regexp.
+  extractorMaximumAllowMatches: 30                                            #The maximum number of matches allowed for the generated extractor, a lower number will generate a stricter extractor.
+  extractorMaximumAllowOccurrence: 20                                         #The maximum number of occurrences allowed for the generated extractor, a lower number will generate a stricter extractor.
+  showSelectionUI: false                                                      #If true, a simple command line UI allows you to select which correlation values to apply. To use, run in a terminal window.
+
+formatting:
+  xmlBodyFormat: ['application/xml', 'application/soap+xml', 'text/xml']      #Request body of these content types is formatted as XML.
+  jsonBodyFormat: ['application/json']                                        #Request body of these content types is formatted as JSON.
+  maxInlineStringLength: 1024                                                 #The maximum length of the inline string. When the string length exceeds this value, the entire string is stored in a separate file and referenced as a variable.
+  maxLineLength: 100                                                          #The maximum line length. Strings longer than this are divided into substrings and concatenated with "+", 0 means no word wrap is needed.
+
+general:
+  createRecordingSummary: true                                                #If true, recording summary report is created.
+
+har:
+  regeneratePages: true                                                       #If true, the pages section in HAR file is regenerated.

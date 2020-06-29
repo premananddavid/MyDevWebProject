@@ -1,0 +1,15 @@
+parameters:
+- columnName: 'username'
+  fileName: username.csv
+  name: username
+  nextRow: sequential                     
+  nextValue: iteration
+  onEnd: loop
+  type: csv
+- columnName: 'jobtitle'
+  fileName: username.csv
+  name: jobtitle
+  nextRow: sequential
+  nextValue: iteration
+  onEnd: loop
+  type: csv

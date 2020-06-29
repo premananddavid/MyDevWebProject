@@ -1,0 +1,42 @@
+httpConnection:                         #Configuration for the Net Loader component
+  maxPersistentConnectionsPerHost: 6    #The maximum number of connections per host a Vuser can open simultaneously (browser emulation).
+  maxConnectedHosts: 30                 #The maximum number of connected hosts per Vuser at any time.
+  maxRedirectDepth: 10                  #The maximum number of redirects when sending a request.
+  keepAliveTimeout: 60                  #Specifies the keep-alive period (in seconds) for an active network connection.
+  connectTimeout: 120                   #Specifies the maximum amount of time (in seconds) a dial will wait for a "connect" to complete.
+  abruptClose: false                    #If true, SO_LINGER is set to 0. The socket will not enter TIME_WAIT state, and can be used immediately.
+  requestTimeout: 120                   #Specifies the timeout (in seconds) to wait for an HTTP request to complete.
+
+proxy:                                  #Configuration for Proxy server
+  usePAC: false                         #Indicates whether to use proxy automatic configuration script during send requests.
+  pacAddress: ""                        #Automatic configuration script address. Format: "http://pacaddress".
+  useProxy: false                       #Indicates whether to use proxy during send requests.
+  proxyServer: ""                       #Proxy server to use. Format: "server:port".
+  proxyUser: ""                         #Proxy server authentication user name.
+  proxyPassword: ""                     #Proxy server authentication password.
+
+ssl:
+  ignoreBadCertificate: false           #If true, SSL accepts any certificate presented by the server and any hostname in that certificate.
+  useHTTP2: false                       #Relevant only if ignoreBadCertificate is true. If true, HTTP/2 client will be configured.
+  tlsMaxVersion: tls12                  #Maximum SSL/TLS version that is acceptable. Possible values are [tls10, tls11, tls12, tls13]. Default maximum version is tls12.
+
+replay:
+  simulateNewUser: true                 #If true, simulates a new Vuser in each iteration (relevant for closing connections).
+  saveSnapshots: "always"               #Specify when to save a snapshot file for WebRequest. Possible values are ["always", "error", "never"].
+  useCache: false                       #If true, resources response is cached, based on response headers.
+
+vts:                                    #Configuration for VTS proxy server
+  useProxy: false                       #If true, uses proxy for VTS requests.
+  proxyServer: ""                       #Proxy server to use. Format: "server:port".
+  proxyUser: ""                         #Proxy server authentication user name.
+  proxyPassword: ""                     #Proxy server authentication password.
+
+encryption:
+  keyLocation: ""                       #Location of the file containing the key used for data decryption. Format: "folder/keyFile.txt".
+
+vuserLogger:                            #Configuration for Vuser logger
+  maxBufferSize: 4096                   #The maximum buffer size for each Vuser logger.
+  logMode: full                         #Specify when to create the log file. Possible values are [full, error, none].
+  logLevel: trace                       #The log level for Vuser logger. Possible values are [error, warning, info, debug, trace].
+  showInConsole: true                   #If true, all the Vuser logging is printed to the console (and the file).
+
